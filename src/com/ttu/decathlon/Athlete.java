@@ -23,7 +23,6 @@ public class Athlete {
     double[] c = new double[]{1.81, 1.4, 1.05, 1.42, 1.81, 1.92, 1.1, 1.35, 1.08, 1.85};
 
     public Athlete() {
-
     }
 
     /**
