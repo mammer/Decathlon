@@ -55,10 +55,10 @@ public class Main {
 
 
                 // Adding athlete name and score to TreeMap.
-                if (athlete.getTotalPoints() < 13471) {
+                if (athlete.getTotalPoints() < 10000) {
                     pointsList.put(athlete.getName(), athlete.getTotalPoints());
                 } else {
-                    System.out.println("Check your CSV. Someone scored unscoreable points. ");
+                    System.out.println("Check your CSV. Someone scored over 10000 points. ");
                 }
             }
             scanner.close();

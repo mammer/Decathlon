@@ -2,7 +2,7 @@ package com.ttu.decathlon;
 
 /**
  * Created by Oskar on 16/02/16.
- */
+ **/
 public class Athlete {
     private String name;
     private double running100m;
@@ -28,7 +28,6 @@ public class Athlete {
 
     /**
      * Cast to int
-     *
      * @return Total points for all the events
      */
     public int getTotalPoints() {

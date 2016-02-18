@@ -1,13 +1,11 @@
-package com.ttu.test;
+package com.ttu.decathlon;
 
-import com.ttu.decathlon.Athlete;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Oskar on 16/02/16.
- */
+ **/
 public class AthleteTest {
 
     @Test
@@ -100,6 +98,14 @@ public class AthleteTest {
         assertEquals(747, a.getRunning1500m(), 0.1);
     }
 
+    @Test
+    public void test_getName() {
+
+        Athlete a = new Athlete();
+        a.setName("Oskar");
+
+        assertEquals("Oskar", a.getName());
+    }
     @Test
     public void test_TotalPoints() {
 
