@@ -21,7 +21,7 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException, ArrayIndexOutOfBoundsException {
 
-        TreeMap<String, Integer> pointsList = new TreeMap<String, Integer>();
+        TreeMap<String, Integer> pointsList = new TreeMap<>();
 
         try {
             Scanner scanner = new Scanner(new File("decathlon.csv"));
