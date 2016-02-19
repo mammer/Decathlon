@@ -20,7 +20,7 @@ public class Main {
      **/
 
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException, ArrayIndexOutOfBoundsException {
-
+        int maximumTotalPoints= 10000;
         TreeMap<String, Integer> pointsList = new TreeMap<>();
 
         try {
@@ -55,7 +55,7 @@ public class Main {
 
 
                 // Adding athlete name and score to TreeMap.
-                if (athlete.getTotalPoints() <= 10000) {
+                if (athlete.getTotalPoints() <= maximumTotalPoints) {
                     pointsList.put(athlete.getName(), athlete.getTotalPoints());
                 } else {
                     System.out.println("Check your CSV. Someone scored over 10000 points. ");
