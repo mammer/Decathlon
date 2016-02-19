@@ -55,7 +55,7 @@ public class Main {
 
 
                 // Adding athlete name and score to TreeMap.
-                if (athlete.getTotalPoints() < 10000) {
+                if (athlete.getTotalPoints() <= 10000) {
                     pointsList.put(athlete.getName(), athlete.getTotalPoints());
                 } else {
                     System.out.println("Check your CSV. Someone scored over 10000 points. ");
