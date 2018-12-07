@@ -9,7 +9,7 @@ import java.util.*;
 public class Sort {
 
     public static Map sortByValue(Map pointsList) {
-        int position =0;
+        int position = 0;
 
         List list = new LinkedList(pointsList.entrySet());
         Collections.sort(list, new Comparator() {
@@ -20,11 +20,11 @@ public class Sort {
         });
 
         Map result = new LinkedHashMap();
-        for (Iterator it = list.iterator(); it.hasNext(); ) {
-            Map.Entry entry = (Map.Entry) it.next();
+        for (Object o : list) {
+            Map.Entry entry = (Map.Entry) o;
             position++;
             Integer.toString(position);
-            result.put(position+". " + entry.getKey(), " (" + entry.getValue() + ")" + "\n");
+            result.put(position + ". " + entry.getKey(), " (" + entry.getValue() + ")" + "\n");
         }
         return result;
     }

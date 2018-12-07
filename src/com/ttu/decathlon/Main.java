@@ -1,6 +1,7 @@
 package com.ttu.decathlon;
 
 import com.ttu.util.Sort;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -9,6 +10,8 @@ import java.util.Scanner;
 import java.util.TreeMap;
 
 public class Main {
+
+    private static final Integer MAX_TOTAL_POINTS = 10000;
 
     /**
      * Different events are calculated as follows:
@@ -19,12 +22,10 @@ public class Main {
      * We need to use Math.floor, because the points are rounded to the next lower integer (by the rules)
      **/
 
-    public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException, ArrayIndexOutOfBoundsException {
-        int maximumTotalPoints= 10000;
+    public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
         TreeMap<String, Integer> pointsList = new TreeMap<>();
 
-        try {
-            Scanner scanner = new Scanner(new File("decathlon.csv"));
+        try (Scanner scanner = new Scanner(new File("decathlon.csv"))) {
 
             while (scanner.hasNext()) {
                 Athlete athlete = new Athlete();
@@ -32,7 +33,7 @@ public class Main {
                 String data = scanner.next();
                 data = data.replace(",", ".");
 
-                String values[] = data.split(";");
+                String[] values = data.split(";");
 
                 athlete.setName(values[0]);
                 athlete.setRunning100m(values[1]);
@@ -53,15 +54,13 @@ public class Main {
                 double timeInSeconds = minutes * 60 + secondsAndMS;
                 athlete.setRunning1500m(timeInSeconds);
 
-
                 // Adding athlete name and score to TreeMap.
-                if (athlete.getTotalPoints() <= maximumTotalPoints) {
+                if (athlete.getTotalPoints() <= MAX_TOTAL_POINTS) {
                     pointsList.put(athlete.getName(), athlete.getTotalPoints());
                 } else {
                     System.out.println("Check your CSV. Someone scored over 10000 points. ");
                 }
             }
-            scanner.close();
         } catch (FileNotFoundException e) {
             System.out.println("File " + e.getMessage().replace("(No such file or directory)", "") + "not found! ");
         }
@@ -73,6 +72,5 @@ public class Main {
         PrintWriter writer = new PrintWriter("results.txt", "UTF-8");
         writer.println(" " + Sort.sortByValue(pointsList).toString().replaceAll("[\\{\\}\\=,]", ""));
         writer.close();
-
     }
 }

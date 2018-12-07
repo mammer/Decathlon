@@ -1,6 +1,7 @@
 package com.ttu.decathlon;
 
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -9,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class AthleteTest {
 
     @Test
-    public void test_100mRunningPoints() {
+    public void test100mRunningPoints() {
 
         Athlete a = new Athlete();
         a.setRunning100m("10.60");
@@ -18,7 +19,7 @@ public class AthleteTest {
     }
 
     @Test
-    public void test_longJumpPoints() {
+    public void testLongJumpPoints() {
 
         Athlete a = new Athlete();
         a.setLongJump("763");
@@ -27,7 +28,7 @@ public class AthleteTest {
     }
 
     @Test
-    public void test_shortPutPoints() {
+    public void testShortPutPoints() {
 
         Athlete a = new Athlete();
         a.setShortPut("14.9");
@@ -36,7 +37,7 @@ public class AthleteTest {
     }
 
     @Test
-    public void test_highJumpPoints() {
+    public void testHighJumpPoints() {
 
         Athlete a = new Athlete();
         a.setHighJump("203");
@@ -45,7 +46,7 @@ public class AthleteTest {
     }
 
     @Test
-    public void test_400mRunningPoints() {
+    public void test400mRunningPoints() {
 
         Athlete a = new Athlete();
         a.setRunning400m("46.23");
@@ -54,7 +55,7 @@ public class AthleteTest {
     }
 
     @Test
-    public void test_hurdlesPoints() {
+    public void testHurdlesPoints() {
 
         Athlete a = new Athlete();
         a.setHurdles("14.40");
@@ -63,7 +64,7 @@ public class AthleteTest {
     }
 
     @Test
-    public void test_discusThrowPoints() {
+    public void testDiscusThrowPoints() {
 
         Athlete a = new Athlete();
         a.setDiscusThrow("43.40");
@@ -72,7 +73,7 @@ public class AthleteTest {
     }
 
     @Test
-    public void test_poleVaultPoints() {
+    public void testPoleVaultPoints() {
 
         Athlete a = new Athlete();
         a.setPoleVault("540");
@@ -81,7 +82,7 @@ public class AthleteTest {
     }
 
     @Test
-    public void test_javelinThrowPoints() {
+    public void testJavelinThrowPoints() {
 
         Athlete a = new Athlete();
         a.setJavelinThrow("67.01");
@@ -90,7 +91,7 @@ public class AthleteTest {
     }
 
     @Test
-    public void test_1500mRunningPoints() {
+    public void test1500mRunningPoints() {
 
         Athlete a = new Athlete();
         a.setRunning1500m(269.58);
@@ -99,15 +100,7 @@ public class AthleteTest {
     }
 
     @Test
-    public void test_getName() {
-
-        Athlete a = new Athlete();
-        a.setName("Oskar");
-
-        assertEquals("Oskar", a.getName());
-    }
-    @Test
-    public void test_TotalPoints() {
+    public void testTotalPoints() {
 
         Athlete a = new Athlete();
         a.setRunning100m("10.60");

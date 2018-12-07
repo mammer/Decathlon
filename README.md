@@ -1,16 +1,10 @@
 # Decathlon
 
-Kümnevõistluse käivitamine.
+Run main class to calculate Decathlon scores to the athletes on the decathlon.csv
 
-
-
-Projektifaili on lisatud decathlon.csv näidisandmetega. Kui soovitakse mingit muud faili, siis tuleb see asendada.
-Kui isikutel on perekonnanimi, siis see tuleb eraldada eesnimest komaga.
-Eeldatakse, et sama nimega inimesi ei ole.
-
-Projekt on kirjutatud IntelliJ 15-ga.
-
-Käima tuleb lasta ‘Main’ klass. Seejärel näeb tulemusi nii konsoolis kui ka results.txt failis. Testide jaoks on vaja käivitada ‘AthleteTest’ klass Junitiga.
-
-
-
+     * Different events are calculated as follows:
+     * Track events P=a*(b - T)**c
+     * Jumps P=a*(M - b)**c
+     * Throws P=a*(D - b)**c
+     * a,b and c are constants for each event (taken from double arrays). P is points. M,D and T are Athletes results.
+     * We need to use Math.floor, because the points are rounded to the next lower integer (by the rules)
